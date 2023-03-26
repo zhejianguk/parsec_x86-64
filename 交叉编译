@@ -38,4 +38,12 @@ $ riscv64-unknown-linux-gnu-gcc -v
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 2、parsec 编译选项更改
-run_parsec.sh文件 arch
+（1）run_parsec.sh文件 arch
+
+（2）查看configure文件，没发现
+（3）查看build_parsec.sh文件，里面有parsecmgmt命令，使用命令 find . -name "parsecmgmt"
+找到： ./bin/parsecmgmt
+（4）cd bin  查看文件
+（5）将parsecmgmt文件的default_build = "home/jiang/usr/riscv64-unknown-linux-gun-gcc"
+
+再次编译遇到问题

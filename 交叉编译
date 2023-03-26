@@ -21,8 +21,7 @@ fatal: clone of 'https://github.com/riscv-software-src/riscv-isa-sim.git' into s
 Failed to clone 'spike' a second time, aborting
 
 网问题？
-
-
+再试了一次，竟然可以了🙆‍
 
 
 （2）编译Linux交叉工具链

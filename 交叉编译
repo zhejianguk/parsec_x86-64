@@ -9,7 +9,21 @@ $  git clone https://gitee.com/mirrors/riscv-gnu-toolchain
 $ cd riscv-gnu-toolchain
 $git rm qemu
 $git submodule update --init --recursive
-（不知道为什么这一部很慢，而且第一次的时候出错）
+（不知道为什么这一部很慢，出错）
+
+出错记录：
+fatal: unable to access 'https://github.com/riscv-software-src/riscv-isa-sim.git/': GnuTLS recv error (-54): Error in the pull function.
+fatal: clone of 'https://github.com/riscv-software-src/riscv-isa-sim.git' into submodule path '/home/jiang/riscv64-linux/riscv-gnu-toolchain/spike' failed
+Failed to clone 'spike'. Retry scheduled
+Cloning into '/home/jiang/riscv64-linux/riscv-gnu-toolchain/spike'...
+fatal: unable to access 'https://github.com/riscv-software-src/riscv-isa-sim.git/': Failed to connect to github.com port 443 after 21017 ms: Connection refused
+fatal: clone of 'https://github.com/riscv-software-src/riscv-isa-sim.git' into submodule path '/home/jiang/riscv64-linux/riscv-gnu-toolchain/spike' failed
+Failed to clone 'spike' a second time, aborting
+
+网问题？
+
+
+
 
 （2）编译Linux交叉工具链
 $ ./configure --prefix=/opt/riscv64 

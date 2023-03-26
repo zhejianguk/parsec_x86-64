@@ -47,3 +47,7 @@ $ riscv64-unknown-linux-gnu-gcc -v
 （5）将parsecmgmt文件的default_build = "home/jiang/usr/riscv64-unknown-linux-gun-gcc"
 
 再次编译遇到问题
+
+（6）找到gcc.bldconf 
+改了export HOSTCC, 把compilers and preprocessors下面改了
+

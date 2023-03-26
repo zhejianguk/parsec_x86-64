@@ -1,0 +1,23 @@
+交叉编译过程记录
+
+1、交叉编译链的制作
+参考：https://zhuanlan.zhihu.com/p/258394849
+
+（1）riscv-gnu-toolchain下载
+$  git clone https://gitee.com/mirrors/riscv-gnu-toolchain
+ 
+$ cd riscv-gnu-toolchain
+$git rm qemu
+$git submodule update --init --recursive
+（不知道为什么这一部很慢，而且第一次的时候出错）
+
+（2）编译Linux交叉工具链
+$ ./configure --prefix=/opt/riscv64 
+$ sudo make linux -j $(nproc)
+$ export PATH="$PATH:/opt/riscv64/bin"
+
+(3)测试是否成功
+$ riscv64-unknown-linux-gnu-gcc -v
+
+2、parsec 编译选项更改
+run_parsec.sh文件 arch

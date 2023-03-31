@@ -49,7 +49,9 @@ $ riscv64-unknown-linux-gnu-gcc -v
 ./env.sh
 cd pkgs && ./build_parsec.sh
 ./run_parsec.sh
-(3)
+(3)将编译好的二进制文件放进rcore中，动态链接完成
+make run 时候报错
+[kernel] Excepiton（LoadPageFault） in application
 
 4、rcore安装thetis优化
 

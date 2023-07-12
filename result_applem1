@@ -1,5 +1,5 @@
 [======= Benchmark: blackscholes =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./blackscholes 1 in_16K.txt prices.txt]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./blackscholes 1 in_16K.txt prices.txt]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 Num of Options: 16384
 Num of Runs: 100
@@ -7,20 +7,18 @@ Size of data: 655360
 
  Performance counter stats for 'taskset -c 7 ./blackscholes 1 in_16K.txt prices.txt':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-         623081695      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-         142802525      apple_firestorm_pmu/cycles/u                                          
+         623081727      apple_firestorm_pmu/instructions/u                                      
+         143181335      apple_firestorm_pmu/cycles/u                                          
 
-       0.049439518 seconds time elapsed
+       0.057052168 seconds time elapsed
 
-       0.049478000 seconds user
+       0.057079000 seconds user
        0.000000000 seconds sys
 
 
 
 [======= Benchmark: bodytrack =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./bodytrack sequenceB_2 4 2 2000 5 0 1]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./bodytrack sequenceB_2 4 2 2000 5 0 1]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 Threading with Posix Threads
 Number of threads : 1
@@ -32,20 +30,18 @@ Processing frame 1
 
  Performance counter stats for 'taskset -c 7 ./bodytrack sequenceB_2 4 2 2000 5 0 1':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        2607750236      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-         543052088      apple_firestorm_pmu/cycles/u                                          
+        2607750297      apple_firestorm_pmu/instructions/u                                      
+         542564494      apple_firestorm_pmu/cycles/u                                          
 
-       0.180600077 seconds time elapsed
+       0.181252691 seconds time elapsed
 
-       0.172500000 seconds user
-       0.008023000 seconds sys
+       0.177217000 seconds user
+       0.004027000 seconds sys
 
 
 
 [======= Benchmark: dedup =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 Total input size:                       30.70 MB
 Total output size:                      29.05 MB
@@ -59,46 +55,42 @@ Output overhead:                         0.26%
 
  Performance counter stats for 'taskset -c 7 ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        5325379517      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-        1973029288      apple_firestorm_pmu/cycles/u                                          
+        5325769051      apple_firestorm_pmu/instructions/u                                      
+        1971104977      apple_firestorm_pmu/cycles/u                                          
 
-       0.697945610 seconds time elapsed
+       0.697303202 seconds time elapsed
 
-       0.620431000 seconds user
-       0.075565000 seconds sys
+       0.625052000 seconds user
+       0.072121000 seconds sys
 
 
 
 [======= Benchmark: facesim =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./facesim -timing -threads 1]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./facesim -timing -threads 1]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 taskset: Segmentation fault
 
  Performance counter stats for 'taskset -c 7 ./facesim -timing -threads 1':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-           2236008      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-           1195926      apple_firestorm_pmu/cycles/u                                          
+           2235990      apple_firestorm_pmu/instructions/u                                      
+           1098649      apple_firestorm_pmu/cycles/u                                          
 
-       0.054913293 seconds time elapsed
+       0.056104873 seconds time elapsed
 
-       0.001473000 seconds user
-       0.000000000 seconds sys
+       0.000000000 seconds user
+       0.002944000 seconds sys
 
 
 
 [======= Benchmark: ferret =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./ferret corel lsh queries 10 20 1 output.txt]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./ferret corel lsh queries 10 20 1 output.txt]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 (21,1)
 (21,2)
 (21,3)
 (44,4)
 (58,5)
-(61,6)
+(62,6)
 (64,7)
 (64,8)
 (64,9)
@@ -157,24 +149,22 @@ PARSEC Benchmark Suite Version 3.0-beta-20150206
 (64,62)
 (64,63)
 (64,64)
-QUERY TIME: 0.518 seconds
+QUERY TIME: 0.521 seconds
 
  Performance counter stats for 'taskset -c 7 ./ferret corel lsh queries 10 20 1 output.txt':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        4164628918      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-        1543096784      apple_firestorm_pmu/cycles/u                                          
+        4164629268      apple_firestorm_pmu/instructions/u                                      
+        1547501148      apple_firestorm_pmu/cycles/u                                          
 
-       0.528469915 seconds time elapsed
+       0.533794463 seconds time elapsed
 
-       0.524334000 seconds user
-       0.004002000 seconds sys
+       0.529583000 seconds user
+       0.003981000 seconds sys
 
 
 
 [======= Benchmark: fluidanimate =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./fluidanimate 1 5 in_100K.fluid out.fluid]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./fluidanimate 1 5 in_100K.fluid out.fluid]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 Loading file "in_100K.fluid"...
 Number of cells: 46080
@@ -184,20 +174,18 @@ Saving file "out.fluid"...
 
  Performance counter stats for 'taskset -c 7 ./fluidanimate 1 5 in_100K.fluid out.fluid':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        2957132817      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-         592200204      apple_firestorm_pmu/cycles/u                                          
+        2957132806      apple_firestorm_pmu/instructions/u                                      
+         590505293      apple_firestorm_pmu/cycles/u                                          
 
-       0.207651739 seconds time elapsed
+       0.202425611 seconds time elapsed
 
-       0.195688000 seconds user
-       0.011980000 seconds sys
+       0.190432000 seconds user
+       0.011902000 seconds sys
 
 
 
 [======= Benchmark: freqmine =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./freqmine kosarak_500k.dat 410]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./freqmine kosarak_500k.dat 410]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 transaction number is 500000
 1522
@@ -220,43 +208,39 @@ transaction number is 500000
 1992
 156
 5
-the data preparation cost 0.081555 seconds, the FPgrowth cost 1.744138 seconds
+the data preparation cost 0.081107 seconds, the FPgrowth cost 1.816329 seconds
 
  Performance counter stats for 'taskset -c 7 ./freqmine kosarak_500k.dat 410':
 
-        8052252148      apple_icestorm_pmu/instructions/u                                        (95.49%)
-       14543378879      apple_firestorm_pmu/instructions/u                                        (4.51%)
-        3659928092      apple_icestorm_pmu/cycles/u                                             (95.49%)
-        4979094592      apple_firestorm_pmu/cycles/u                                            (4.51%)
+       15230504045      apple_firestorm_pmu/instructions/u                                        (4.30%)
+        5084343825      apple_firestorm_pmu/cycles/u                                            (4.30%)
 
-       1.827637780 seconds time elapsed
+       1.899129613 seconds time elapsed
 
-       1.818746000 seconds user
-       0.007994000 seconds sys
+       1.886313000 seconds user
+       0.012014000 seconds sys
 
 
 
 [======= Benchmark: streamcluster =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 read 8192 points
 
  Performance counter stats for 'taskset -c 7 ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        3457999179      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-        1301354143      apple_firestorm_pmu/cycles/u                                          
+        3457999161      apple_firestorm_pmu/instructions/u                                      
+        1295577670      apple_firestorm_pmu/cycles/u                                          
 
-       0.423079545 seconds time elapsed
+       0.422932673 seconds time elapsed
 
-       0.423063000 seconds user
-       0.000000000 seconds sys
+       0.418322000 seconds user
+       0.003984000 seconds sys
 
 
 
 [======= Benchmark: swaptions =======]
-workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_firestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./swaptions -ns 32 -sm 20000 -nt 1]
+workload=[perf stat -e apple_firestorm_pmu/instructions/u,apple_firestorm_pmu/cycles/u taskset -c 7 ./swaptions -ns 32 -sm 20000 -nt 1]
 PARSEC Benchmark Suite Version 3.0-beta-20150206
 Number of Simulations: 20000,  Number of threads: 1 Number of swaptions: 32
 Swaption 0: [SwaptionPrice: 6.9319565131 StdError: 0.0009063581] 
@@ -294,12 +278,11 @@ Swaption 31: [SwaptionPrice: 23.8756194750 StdError: 0.0031233886]
 
  Performance counter stats for 'taskset -c 7 ./swaptions -ns 32 -sm 20000 -nt 1':
 
-     <not counted>      apple_icestorm_pmu/instructions/u                                        (0.00%)
-        5192001891      apple_firestorm_pmu/instructions/u                                      
-     <not counted>      apple_icestorm_pmu/cycles/u                                             (0.00%)
-        1267193854      apple_firestorm_pmu/cycles/u                                          
+        5192001864      apple_firestorm_pmu/instructions/u                                      
+        1267305428      apple_firestorm_pmu/cycles/u                                          
 
-       0.420236032 seconds time elapsed
+       0.413438692 seconds time elapsed
 
-       0.420236000 seconds user
+       0.413401000 seconds user
        0.000000000 seconds sys
+

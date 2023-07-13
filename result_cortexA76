@@ -1,0 +1,288 @@
+zj266@vienna:~/parsec/pkgs$ ./run_parsec.sh 
+[======= Benchmark: blackscholes =======]
+workload=[perf stat -e instructions,cycles ./blackscholes 1 in_16K.txt prices.txt]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Num of Options: 16384
+Num of Runs: 100
+Size of data: 655360
+
+ Performance counter stats for './blackscholes 1 in_16K.txt prices.txt':
+
+       638,643,907      instructions              #    1.86  insn per cycle         
+       343,420,316      cycles                                                      
+
+       0.140425127 seconds time elapsed
+
+       0.129260000 seconds user
+       0.000000000 seconds sys
+
+
+
+[======= Benchmark: bodytrack =======]
+workload=[perf stat -e instructions,cycles ./bodytrack sequenceB_2 4 2 2000 5 0 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Threading with Posix Threads
+Number of threads : 1
+Using dataset : sequenceB_2/
+2000 particles with 5 annealing layers
+
+Processing frame 0
+Processing frame 1
+
+ Performance counter stats for './bodytrack sequenceB_2 4 2 2000 5 0 1':
+
+     2,671,906,119      instructions              #    2.38  insn per cycle         
+     1,124,286,486      cycles                                                      
+
+       0.446407659 seconds time elapsed
+
+       0.389306000 seconds user
+       0.011917000 seconds sys
+
+
+
+[======= Benchmark: dedup =======]
+workload=[perf stat -e instructions,cycles ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Total input size:                       30.70 MB
+Total output size:                      29.05 MB
+Effective compression factor:            1.06x
+
+Mean data chunk size:                    3.88 KB (stddev: 367.52 KB)
+Amount of duplicate chunks:              3.84%
+Data size after deduplication:          30.69 MB (compression factor: 1.00x)
+Data size after compression:            28.98 MB (compression factor: 1.06x)
+Output overhead:                         0.26%
+
+ Performance counter stats for './dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp':
+
+     6,469,964,124      instructions              #    1.88  insn per cycle         
+     3,441,354,618      cycles                                                      
+
+       1.181764903 seconds time elapsed
+
+       0.868807000 seconds user
+       0.297647000 seconds sys
+
+
+
+[======= Benchmark: facesim =======]
+workload=[perf stat -e instructions,cycles ./facesim -timing -threads 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+./facesim: Segmentation fault
+
+ Performance counter stats for './facesim -timing -threads 1':
+
+         3,642,381      instructions              #    1.05  insn per cycle         
+         3,479,197      cycles                                                      
+
+       0.173233774 seconds time elapsed
+
+       0.000000000 seconds user
+       0.003454000 seconds sys
+
+
+
+[======= Benchmark: ferret =======]
+workload=[perf stat -e instructions,cycles ./ferret corel lsh queries 10 20 1 output.txt]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+(16,1)
+(17,2)
+(18,3)
+(19,4)
+(20,5)
+(36,6)
+(37,7)
+(39,8)
+(39,9)
+(42,10)
+(51,11)
+(64,12)
+(64,13)
+(64,14)
+(64,15)
+(64,16)
+(64,17)
+(64,18)
+(64,19)
+(64,20)
+(64,21)
+(64,22)
+(64,23)
+(64,24)
+(64,25)
+(64,26)
+(64,27)
+(64,28)
+(64,29)
+(64,30)
+(64,31)
+(64,32)
+(64,33)
+(64,34)
+(64,35)
+(64,36)
+(64,37)
+(64,38)
+(64,39)
+(64,40)
+(64,41)
+(64,42)
+(64,43)
+(64,44)
+(64,45)
+(64,46)
+(64,47)
+(64,48)
+(64,49)
+(64,50)
+(64,51)
+(64,52)
+(64,53)
+(64,54)
+(64,55)
+(64,56)
+(64,57)
+(64,58)
+(64,59)
+(64,60)
+(64,61)
+(64,62)
+(64,63)
+(64,64)
+QUERY TIME: 0.513 seconds
+
+ Performance counter stats for './ferret corel lsh queries 10 20 1 output.txt':
+
+     4,370,313,048      instructions              #    1.89  insn per cycle         
+     2,311,275,202      cycles                                                      
+
+       0.555699150 seconds time elapsed
+
+       0.795625000 seconds user
+       0.035448000 seconds sys
+
+
+
+[======= Benchmark: fluidanimate =======]
+workload=[perf stat -e instructions,cycles ./fluidanimate 1 5 in_100K.fluid out.fluid]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Loading file "in_100K.fluid"...
+Number of cells: 46080
+Grids steps over x, y, z: 0.0040625 0.004 0.0040625
+Number of particles: 102850
+Saving file "out.fluid"...
+
+ Performance counter stats for './fluidanimate 1 5 in_100K.fluid out.fluid':
+
+     3,151,525,746      instructions              #    2.50  insn per cycle         
+     1,260,091,995      cycles                                                      
+
+       0.465906142 seconds time elapsed
+
+       0.368438000 seconds user
+       0.055463000 seconds sys
+
+
+
+[======= Benchmark: freqmine =======]
+workload=[perf stat -e instructions,cycles ./freqmine kosarak_500k.dat 410]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+transaction number is 500000
+1522
+13083
+44649
+118072
+337195
+904434
+1946385
+3281416
+4382543
+4694188
+4068013
+2864888
+1636526
+750500
+270740
+74394
+14841
+1992
+156
+5
+the data preparation cost 0.134006 seconds, the FPgrowth cost 0.259276 seconds
+
+ Performance counter stats for './freqmine kosarak_500k.dat 410':
+
+    11,445,437,237      instructions              #    1.63  insn per cycle         
+     7,025,446,684      cycles                                                      
+
+       0.400406168 seconds time elapsed
+
+       2.446462000 seconds user
+       1.141682000 seconds sys
+
+
+
+[======= Benchmark: streamcluster =======]
+workload=[perf stat -e instructions,cycles ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+read 8192 points
+
+ Performance counter stats for './streamcluster 10 20 64 8192 8192 1000 none output.txt 1':
+
+     3,472,841,681      instructions              #    1.27  insn per cycle         
+     2,739,639,263      cycles                                                      
+
+       0.862328926 seconds time elapsed
+
+       0.858130000 seconds user
+       0.000000000 seconds sys
+
+
+
+[======= Benchmark: swaptions =======]
+workload=[perf stat -e instructions,cycles ./swaptions -ns 32 -sm 20000 -nt 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Number of Simulations: 20000,  Number of threads: 1 Number of swaptions: 32
+Swaption 0: [SwaptionPrice: 6.9319565131 StdError: 0.0009063581] 
+Swaption 1: [SwaptionPrice: 3.2383626469 StdError: 0.0006294997] 
+Swaption 2: [SwaptionPrice: 0.8540378899 StdError: 0.0002340970] 
+Swaption 3: [SwaptionPrice: 6.4811546688 StdError: 0.0011927061] 
+Swaption 4: [SwaptionPrice: 79.7699788268 StdError: 0.0138308670] 
+Swaption 5: [SwaptionPrice: 6.8636585104 StdError: 0.0016411811] 
+Swaption 6: [SwaptionPrice: 81.2911624260 StdError: 0.0118384782] 
+Swaption 7: [SwaptionPrice: 3.0595092399 StdError: 0.0004400010] 
+Swaption 8: [SwaptionPrice: 112.3456009976 StdError: 0.0139418526] 
+Swaption 9: [SwaptionPrice: 3.0596526260 StdError: 0.0004384719] 
+Swaption 10: [SwaptionPrice: 12.0734051020 StdError: 0.0020513222] 
+Swaption 11: [SwaptionPrice: 24.0337244128 StdError: 0.0030583031] 
+Swaption 12: [SwaptionPrice: 96.6881275113 StdError: 0.0174944850] 
+Swaption 13: [SwaptionPrice: 1.1505579752 StdError: 0.0002766834] 
+Swaption 14: [SwaptionPrice: 9.2835893575 StdError: 0.0015099404] 
+Swaption 15: [SwaptionPrice: 9.6508757485 StdError: 0.0014477457] 
+Swaption 16: [SwaptionPrice: 22.3135616769 StdError: 0.0049362093] 
+Swaption 17: [SwaptionPrice: 191.7092913789 StdError: 0.0365699035] 
+Swaption 18: [SwaptionPrice: 1.7117202454 StdError: 0.0005497052] 
+Swaption 19: [SwaptionPrice: 122.2914374412 StdError: 0.0167192229] 
+Swaption 20: [SwaptionPrice: 1.6308704819 StdError: 0.0004416247] 
+Swaption 21: [SwaptionPrice: 3.4206341314 StdError: 0.0008649877] 
+Swaption 22: [SwaptionPrice: 0.0000185320 StdError: 0.0000032116] 
+Swaption 23: [SwaptionPrice: 20.6068075167 StdError: 0.0041121454] 
+Swaption 24: [SwaptionPrice: 60.5870431262 StdError: 0.0091689780] 
+Swaption 25: [SwaptionPrice: 23.2934484237 StdError: 0.0034890920] 
+Swaption 26: [SwaptionPrice: 197.3252806050 StdError: 0.0312635448] 
+Swaption 27: [SwaptionPrice: 86.7856537114 StdError: 0.0149684898] 
+Swaption 28: [SwaptionPrice: 5.7426008737 StdError: 0.0010562060] 
+Swaption 29: [SwaptionPrice: 2.6783493053 StdError: 0.0006944337] 
+Swaption 30: [SwaptionPrice: 59.0563611114 StdError: 0.0091514735] 
+Swaption 31: [SwaptionPrice: 23.8756194750 StdError: 0.0031233886] 
+
+ Performance counter stats for './swaptions -ns 32 -sm 20000 -nt 1':
+
+     5,236,647,039      instructions              #    2.42  insn per cycle         
+     2,167,997,430      cycles                                                      
+
+       0.679281290 seconds time elapsed
+
+       0.674740000 seconds user
+       0.003992000 seconds sys

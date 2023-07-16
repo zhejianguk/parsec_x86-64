@@ -1,0 +1,287 @@
+[======= Benchmark: blackscholes =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./blackscholes 1 in_16K.txt prices.txt]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Num of Options: 16384
+Num of Runs: 100
+Size of data: 655360
+
+ Performance counter stats for 'taskset -c 0 ./blackscholes 1 in_16K.txt prices.txt':
+
+         625916548      apple_icestorm_pmu/instructions/u                                        (99.49%)
+         315785772      apple_icestorm_pmu/cycles/u                                             (99.49%)
+
+       0.166352613 seconds time elapsed
+
+       0.166283000 seconds user
+       0.000000000 seconds sys
+
+
+
+[======= Benchmark: bodytrack =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./bodytrack sequenceB_2 4 2 2000 5 0 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Threading with Posix Threads
+Number of threads : 1
+Using dataset : sequenceB_2/
+2000 particles with 5 annealing layers
+
+Processing frame 0
+Processing frame 1
+
+ Performance counter stats for 'taskset -c 0 ./bodytrack sequenceB_2 4 2 2000 5 0 1':
+
+        2609309655      apple_icestorm_pmu/instructions/u                                        (99.93%)
+        1150480896      apple_icestorm_pmu/cycles/u                                             (99.93%)
+
+       0.572264829 seconds time elapsed
+
+       0.564089000 seconds user
+       0.008001000 seconds sys
+
+
+
+[======= Benchmark: dedup =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Total input size:                       30.70 MB
+Total output size:                      29.05 MB
+Effective compression factor:            1.06x
+
+Mean data chunk size:                    3.88 KB (stddev: 367.52 KB)
+Amount of duplicate chunks:              3.84%
+Data size after deduplication:          30.69 MB (compression factor: 1.00x)
+Data size after compression:            28.98 MB (compression factor: 1.06x)
+Output overhead:                         0.26%
+
+ Performance counter stats for 'taskset -c 0 ./dedup -c -p -v -t 1 -i media.dat -o output.dat.ddp':
+
+        5326033413      apple_icestorm_pmu/instructions/u                                        (99.98%)
+        2781837922      apple_icestorm_pmu/cycles/u                                             (99.98%)
+
+       1.502037299 seconds time elapsed
+
+       1.345164000 seconds user
+       0.156135000 seconds sys
+
+
+
+[======= Benchmark: facesim =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./facesim -timing -threads 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+taskset: Segmentation fault
+
+ Performance counter stats for 'taskset -c 0 ./facesim -timing -threads 1':
+
+           2055581      apple_icestorm_pmu/instructions/u                                        (92.77%)
+           1378853      apple_icestorm_pmu/cycles/u                                             (92.77%)
+
+       0.058078492 seconds time elapsed
+
+       0.004526000 seconds user
+       0.000000000 seconds sys
+
+
+
+[======= Benchmark: ferret =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./ferret corel lsh queries 10 20 1 output.txt]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+(17,1)
+(17,2)
+(25,3)
+(44,4)
+(59,5)
+(62,6)
+(64,7)
+(64,8)
+(64,9)
+(64,10)
+(64,11)
+(64,12)
+(64,13)
+(64,14)
+(64,15)
+(64,16)
+(64,17)
+(64,18)
+(64,19)
+(64,20)
+(64,21)
+(64,22)
+(64,23)
+(64,24)
+(64,25)
+(64,26)
+(64,27)
+(64,28)
+(64,29)
+(64,30)
+(64,31)
+(64,32)
+(64,33)
+(64,34)
+(64,35)
+(64,36)
+(64,37)
+(64,38)
+(64,39)
+(64,40)
+(64,41)
+(64,42)
+(64,43)
+(64,44)
+(64,45)
+(64,46)
+(64,47)
+(64,48)
+(64,49)
+(64,50)
+(64,51)
+(64,52)
+(64,53)
+(64,54)
+(64,55)
+(64,56)
+(64,57)
+(64,58)
+(64,59)
+(64,60)
+(64,61)
+(64,62)
+(64,63)
+(64,64)
+QUERY TIME: 1.148 seconds
+
+ Performance counter stats for 'taskset -c 0 ./ferret corel lsh queries 10 20 1 output.txt':
+
+        4165929477      apple_icestorm_pmu/instructions/u                                        (99.96%)
+        2369725640      apple_icestorm_pmu/cycles/u                                             (99.96%)
+
+       1.181458155 seconds time elapsed
+
+       1.152678000 seconds user
+       0.028016000 seconds sys
+
+
+
+[======= Benchmark: fluidanimate =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./fluidanimate 1 5 in_100K.fluid out.fluid]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Loading file "in_100K.fluid"...
+Number of cells: 46080
+Grids steps over x, y, z: 0.0040625 0.004 0.0040625
+Number of particles: 102850
+Saving file "out.fluid"...
+
+ Performance counter stats for 'taskset -c 0 ./fluidanimate 1 5 in_100K.fluid out.fluid':
+
+        2959420478      apple_icestorm_pmu/instructions/u                                        (99.91%)
+        1395646119      apple_icestorm_pmu/cycles/u                                             (99.91%)
+
+       0.698887481 seconds time elapsed
+
+       0.678233000 seconds user
+       0.019948000 seconds sys
+
+
+
+[======= Benchmark: freqmine =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./freqmine kosarak_500k.dat 410]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+transaction number is 500000
+1522
+13083
+44649
+118072
+337195
+904434
+1946385
+3281416
+4382543
+4694188
+4068013
+2864888
+1636526
+750500
+270740
+74394
+14841
+1992
+156
+5
+the data preparation cost 0.144939 seconds, the FPgrowth cost 1.758356 seconds
+
+ Performance counter stats for 'taskset -c 0 ./freqmine kosarak_500k.dat 410':
+
+        8345457722      apple_icestorm_pmu/instructions/u                                        (99.99%)
+        3872713895      apple_icestorm_pmu/cycles/u                                             (99.99%)
+
+       1.905896223 seconds time elapsed
+
+       1.900287000 seconds user
+       0.003992000 seconds sys
+
+
+
+[======= Benchmark: streamcluster =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+read 8192 points
+
+ Performance counter stats for 'taskset -c 0 ./streamcluster 10 20 64 8192 8192 1000 none output.txt 1':
+
+        3458710966      apple_icestorm_pmu/instructions/u                                        (99.97%)
+        2296526818      apple_icestorm_pmu/cycles/u                                             (99.97%)
+
+       1.124801011 seconds time elapsed
+
+       1.124385000 seconds user
+       0.000000000 seconds sys
+
+
+
+[======= Benchmark: swaptions =======]
+workload=[perf stat -e apple_icestorm_pmu/instructions/u,apple_icestorm_pmu/cycles/u taskset -c 0 ./swaptions -ns 32 -sm 20000 -nt 1]
+PARSEC Benchmark Suite Version 3.0-beta-20150206
+Number of Simulations: 20000,  Number of threads: 1 Number of swaptions: 32
+Swaption 0: [SwaptionPrice: 6.9319565131 StdError: 0.0009063581] 
+Swaption 1: [SwaptionPrice: 3.2383626469 StdError: 0.0006294997] 
+Swaption 2: [SwaptionPrice: 0.8540378899 StdError: 0.0002340970] 
+Swaption 3: [SwaptionPrice: 6.4811546688 StdError: 0.0011927061] 
+Swaption 4: [SwaptionPrice: 79.7699788268 StdError: 0.0138308670] 
+Swaption 5: [SwaptionPrice: 6.8636585104 StdError: 0.0016411811] 
+Swaption 6: [SwaptionPrice: 81.2911624260 StdError: 0.0118384782] 
+Swaption 7: [SwaptionPrice: 3.0595092399 StdError: 0.0004400010] 
+Swaption 8: [SwaptionPrice: 112.3456009976 StdError: 0.0139418526] 
+Swaption 9: [SwaptionPrice: 3.0596526260 StdError: 0.0004384719] 
+Swaption 10: [SwaptionPrice: 12.0734051020 StdError: 0.0020513222] 
+Swaption 11: [SwaptionPrice: 24.0337244128 StdError: 0.0030583031] 
+Swaption 12: [SwaptionPrice: 96.6881275113 StdError: 0.0174944850] 
+Swaption 13: [SwaptionPrice: 1.1505579752 StdError: 0.0002766834] 
+Swaption 14: [SwaptionPrice: 9.2835893575 StdError: 0.0015099404] 
+Swaption 15: [SwaptionPrice: 9.6508757485 StdError: 0.0014477457] 
+Swaption 16: [SwaptionPrice: 22.3135616769 StdError: 0.0049362093] 
+Swaption 17: [SwaptionPrice: 191.7092913789 StdError: 0.0365699035] 
+Swaption 18: [SwaptionPrice: 1.7117202454 StdError: 0.0005497052] 
+Swaption 19: [SwaptionPrice: 122.2914374412 StdError: 0.0167192229] 
+Swaption 20: [SwaptionPrice: 1.6308704819 StdError: 0.0004416247] 
+Swaption 21: [SwaptionPrice: 3.4206341314 StdError: 0.0008649877] 
+Swaption 22: [SwaptionPrice: 0.0000185320 StdError: 0.0000032116] 
+Swaption 23: [SwaptionPrice: 20.6068075167 StdError: 0.0041121454] 
+Swaption 24: [SwaptionPrice: 60.5870431262 StdError: 0.0091689780] 
+Swaption 25: [SwaptionPrice: 23.2934484237 StdError: 0.0034890920] 
+Swaption 26: [SwaptionPrice: 197.3252806050 StdError: 0.0312635448] 
+Swaption 27: [SwaptionPrice: 86.7856537114 StdError: 0.0149684898] 
+Swaption 28: [SwaptionPrice: 5.7426008737 StdError: 0.0010562060] 
+Swaption 29: [SwaptionPrice: 2.6783493053 StdError: 0.0006944337] 
+Swaption 30: [SwaptionPrice: 59.0563611114 StdError: 0.0091514735] 
+Swaption 31: [SwaptionPrice: 23.8756194750 StdError: 0.0031233886] 
+
+ Performance counter stats for 'taskset -c 0 ./swaptions -ns 32 -sm 20000 -nt 1':
+
+        5193829567      apple_icestorm_pmu/instructions/u                                        (99.96%)
+        2016669985      apple_icestorm_pmu/cycles/u                                             (99.96%)
+
+       0.994253236 seconds time elapsed
+
+       0.993361000 seconds user
+       0.000000000 seconds sys
